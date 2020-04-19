@@ -1,0 +1,26 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button icon-only start (click)="mostratMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16">
+        <agm-marker *ngFor="let cliente of _cs.clientes" 
+            [latitude]="cliente.lat" 
+            [longitude]="cliente.lng">
+        </agm-marker>
+    </agm-map>
+</ion-content>
+<ion-footer color="danger">
+    <ion-toolbar>
+        <ion-title text-center>Bellet Cosmeticos</ion-title>
+    </ion-toolbar>
+</ion-footer>
